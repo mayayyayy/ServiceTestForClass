@@ -1,5 +1,6 @@
 ﻿//using ServiceTest.Models;
 //using ServiceTest.Services;
+using ServiceTest.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,22 @@ namespace ServiceTest.ViewModels
 {
     public class MainPageViewModel:ViewModel
     {
-       
-        public MainPageViewModel()
+       private TriviaService service;
+        private string message;
+        public string Message
         {
-            
+            get { return message; } 
+            set
+            {
+                message = value;
+                OnPropertyChange(nameof(message));
+            }
+        }
+        
+
+        public MainPageViewModel(TriviaService triv)
+        {
+            service = triv;
         }
 
        
