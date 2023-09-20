@@ -13,7 +13,7 @@ namespace ServiceTest.Services
         private HttpClient client;
         private JsonSerializerOptions options;
         const string URL = @"https://zr8z94hw-44376.euw.devtunnels.ms/AmericanQuestions/";
-        public TriviaService(HttpClient client)
+        public TriviaService()
         {
             client = new HttpClient();
             options = new JsonSerializerOptions()
